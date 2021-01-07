@@ -1,0 +1,22 @@
+
+<div class="card-columns topspace">
+    <div *ngFor="let issue of comicList" class="card">
+      <img src="{{issue.image.small_url}}" class="card-img-top" alt="">
+      <div class="card-body">
+          <small>Volumen</small>
+        <h4 class="tituloVolumen">{{issue.volume.name}} <hr></h4>
+        <h5 *ngIf="issue.name" class="nombre">{{issue.name}}<hr></h5>
+        <p class="card-text" [innerHTML]="issue.description"></p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Última actualización: {{issue.date_last_updated}}</small>
+      </div>
+      <button class="btn btn-block btn-outline-success boton" [routerLink]="['/comic',issue.id]" routerLinkActive="router-link-active" >Ver más</button>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+          Comic número: <cite title="Source Title">{{issue.issue_number}}</cite>
+        </small>
+      </footer>
+    </div>
+ 
+  </div>

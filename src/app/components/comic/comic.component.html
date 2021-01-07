@@ -1,0 +1,30 @@
+
+<div class="card topspace">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{historieta.image.original_url}}" class="card-img" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title tituloVolumen">{{historieta.volume.name}}</h3><hr>
+          <h5 class="nombreLibro" *ngIf="historieta.name">{{historieta.name}}<hr></h5>
+        <div *ngIf="historieta.description">    <p>Descripción:</p>
+            <p class="card-text" [innerHTML]="historieta.description"></p><hr></div>
+          <p class="card-text"><small class="text-muted"></small></p>
+        
+          
+            <h5>Créditos: <hr></h5>
+            <ul><li *ngFor="let persona of historieta.person_credits">
+                {{persona.name}}
+            </li></ul>
+           <hr>
+      <h5>Portada: <b>{{historieta.cover_date}}</b></h5>
+
+        </div>
+       
+      </div>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">Añadido en: <b>{{historieta.date_added}}</b> - Actualizado en: <b>{{historieta.date_last_updated}}</b></small>
+      </div>
+  </div>

@@ -1,0 +1,23 @@
+.topspace{
+    margin-top: 20px;;
+}
+
+.tituloVolumen{
+    font-family: 'Lilita One', cursive;
+    color: rgb(255, 146, 44);
+}
+.nombrePersonaje{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: rgb(55, 161, 223);
+}
+.seccionamigos{
+    padding-left: 10px;;
+}
+.linkE{
+    cursor: pointer;
+}
+.linkE:hover{
+    color: rgb(5, 150, 17);
+    text-decoration: yellowgreen underline;
+}

@@ -1,0 +1,24 @@
+
+<div class="card-columns topspace">
+    <div *ngFor="let issue of peopleList" class="card">
+      <img src="{{issue.image.small_url}}" class="card-img-top" alt="">
+      <div class="card-body">
+        <h4 *ngIf="issue.name" class="nombre">{{issue.name}}<hr></h4>
+        <div *ngIf="issue.real_name">
+          <small>Nombre real</small>
+        <h5 class="tituloVolumen">{{issue.real_name}} <hr></h5>
+        </div>
+        <p class="card-text">{{issue.deck}}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Última actualización: {{issue.date_last_updated}}</small>
+      </div>
+      <button class="btn btn-block btn-outline-success boton" [routerLink]="['/personaje',issue.id]" routerLinkActive="router-link-active" >Ver más</button>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+          Comic número: <cite title="Source Title">{{issue.id}}</cite>
+        </small>
+      </footer>
+    </div>
+ 
+  </div>

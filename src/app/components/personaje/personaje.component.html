@@ -1,0 +1,51 @@
+
+<div class="card topspace">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <img src="{{personaje.image.original_url}}" class="card-img" alt="...">
+        <hr>
+        <div class="seccionamigos">
+            <h5>Amigos: <hr></h5>
+            <ul><li class="linkE" *ngFor="let persona of personaje.character_friends" [routerLink]="['/personaje',persona.id]">
+                {{persona.name}}
+            </li></ul>
+           <hr>
+            <h5>Enemigos: <hr></h5>
+        <ul><li class="linkE" *ngFor="let persona of personaje.character_enemies" [routerLink]="['/personaje',persona.id]">
+            {{persona.name}}
+        </li></ul> <hr>
+        <h5>Poderes: <hr></h5>
+        <ul><li *ngFor="let persona of personaje.powers">
+            {{persona.name}}
+        </li></ul>
+       <hr>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+            <h6>{{personaje.publisher.name}} <hr></h6>
+          <h3 class="card-title nombrePersonaje">{{personaje.name}}</h3><hr>
+          <div *ngIf="personaje.real_name">
+            <small>Nombre real</small>
+          <h5 class="tituloVolumen">{{personaje.real_name}} <hr></h5>
+          </div>
+        <div *ngIf="personaje.description">    <p>Descripción:</p>
+            <p class="card-text" [innerHTML]="personaje.description"></p><hr></div>
+        
+            <div *ngIf="!personaje.description">    <p>Descripción:</p>
+                <p class="card-text" [innerHTML]="personaje.deck"></p><hr></div>
+          <p class="card-text"><small class="text-muted"></small></p>
+        
+          
+            <h5>Creadores: <hr></h5>
+            <ul><li *ngFor="let persona of personaje.creators">
+                {{persona.name}}
+            </li></ul>
+        </div>
+       
+      </div>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">Añadido en: <b>{{personaje.date_added}}</b> - Actualizado en: <b>{{personaje.date_last_updated}}</b></small>
+      </div>
+  </div>

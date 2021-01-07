@@ -1,0 +1,13 @@
+.topspace{
+    margin-top: 20px;;
+}
+
+.tituloVolumen{
+    font-family: 'Lilita One', cursive;
+    color: rgb(255, 146, 44);
+}
+.nombreLibro{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    color: rgb(55, 161, 223);
+}
